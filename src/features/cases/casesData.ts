@@ -1,7 +1,4 @@
-import sample1 from '../../assets/background.png'
 import granMalecon from '../../assets/granMalecon.png'
-import parqueCentral from '../../assets/parqueCentral.png'
-import corredorVerde from '../../assets/corredorVerde.png'
 import puertaDeOro from '../../assets/puertaDeOro.png'
 import siembraBarranquilla from '../../assets/siembraBarranquilla.png'
 import ecoparqueMallorquin from '../../assets/ecoparqueMallorquin.png'

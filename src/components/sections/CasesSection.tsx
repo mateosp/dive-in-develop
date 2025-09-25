@@ -74,19 +74,10 @@ export function CasesSection({ isVisible }: CasesSectionProps) {
   }, [index, slideWidth])
 
   return (
-    <section id="casos" className="relative w-full min-h-screen snap-start pt-28 md:pt-36 lg:pt-40">
+    <section id="casos" className="relative w-full min-h-screen snap-start pt-[200px]">
       <div className="container relative px-4" style={{ zIndex: Z_INDEX.CONTENT }}>
         {/* Contenedor del carrusel con botones externos */}
         <div className="relative flex items-center gap-4">
-          {/* Botón anterior */}
-          <button
-            aria-label="Anterior"
-            onClick={() => setIndex((i) => Math.max(0, i - 1))}
-            disabled={index === 0}
-            className="flex-shrink-0 w-10 h-10 rounded-full border border-white/40 bg-white/30 text-black shadow-lg backdrop-blur supports-[backdrop-filter]:bg-white/25 hover:bg-white/40 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
-          >
-            ‹
-          </button>
 
           {/* Carrusel */}
           <div
@@ -126,15 +117,6 @@ export function CasesSection({ isVisible }: CasesSectionProps) {
             </div>
           </div>
 
-          {/* Botón siguiente */}
-          <button
-            aria-label="Siguiente"
-            onClick={() => setIndex((i) => Math.min(total - 1, i + 1))}
-            disabled={index === total - 1}
-            className="flex-shrink-0 w-10 h-10 rounded-full border border-white/40 bg-white/30 text-black shadow-lg backdrop-blur supports-[backdrop-filter]:bg-white/25 hover:bg-white/40 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
-          >
-            ›
-          </button>
         </div>
 
         {/* Indicador de posición */}
