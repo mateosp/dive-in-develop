@@ -37,7 +37,7 @@ export default function NavigationBar({ currentSection }: NavigationBarProps) {
             <a
               key={item.href}
               href={item.href}
-              className={`px-3 py-2 rounded-full font-medium transition-all duration-200 ${
+              className={`px-2 py-1 rounded-full font-medium transition-all duration-200 whitespace-nowrap ${
                 item.isActive 
                   ? 'text-indigo-700 bg-white/60 shadow-sm' 
                   : 'text-black hover:text-indigo-600 hover:bg-white/20'
