@@ -30,7 +30,7 @@ export const teamMembers: TeamMember[] = [
     photo: carlosAcosta,
     banner: bannerCarlosAcosta,
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et sapien ut nibh dictum lacinia.',
+      'Ingeniero de la Universidad de Columbia en Nueva York y ex Gerente de Ciudad en Barranquilla, lideró proyectos urbanos transformadores como el Gran Malecón y un galardonado sistema de parques. Dirigió la plantación de 150,000 árboles y transformó Puerta de Oro de organizadora de eventos a también una estructuradora de proyectos.',
   },
   {
     id: 'ricardo-plata',
