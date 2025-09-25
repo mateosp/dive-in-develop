@@ -11,17 +11,13 @@ export function TeamSection({ isVisible }: TeamSectionProps) {
   return (
     <section
       id="equipo"
-      className={`fixed inset-0 w-full h-screen overflow-hidden bg-cover bg-center transition-all duration-1000 ease-in-out ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-full'
-      }`}
-      style={{ backgroundImage: `url(${bg})` }}
+      className="relative w-full min-h-screen snap-start pt-24 md:pt-32 lg:pt-36"
     >
-      {/* Header con logo y navegación persistentes */}
-      <Header />
+      {/* Header fijo está en HomePage */}
 
       {/* Contenedor central para imágenes y botón */}
       <div
-        className="container relative flex flex-col items-center justify-between h-[calc(100vh-160px)] pt-4 pb-6 px-4"
+        className="container relative flex flex-col items-center justify-between min-h-[calc(110vh-220px)] pt-4 pb-6 px-4"
         style={{ zIndex: Z_INDEX.CONTENT }}
       >
         {/* Grid de miembros centrada verticalmente entre navbar y final de sección */}
@@ -68,10 +64,7 @@ export function TeamSection({ isVisible }: TeamSectionProps) {
         </button>
       </div>
 
-      <div
-        className="absolute inset-0 bg-gradient-to-b from-white/10 to-transparent"
-        style={{ zIndex: Z_INDEX.BACKGROUND }}
-      />
+      {/* Overlay eliminado para mantener un fondo completamente uniforme */}
     </section>
   )
 }

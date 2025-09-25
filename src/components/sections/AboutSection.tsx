@@ -10,16 +10,11 @@ export function AboutSection({ isVisible }: AboutSectionProps) {
   return (
     <section
       id="sobre-nosotros"
-      className={`fixed inset-0 w-full h-screen overflow-hidden bg-cover bg-center transition-all duration-1000 ease-in-out ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-full'
-      }`}
-      style={{ backgroundImage: `url(${bg})` }}
+      className="relative w-full min-h-screen snap-start pt-24 md:pt-32 lg:pt-36"
     >
-      {/* Header */}
-      <Header />
 
       {/* About Content - Responsive */}
-      <div className="container relative flex flex-col items-center justify-center min-h-[calc(100vh-200px)] px-4" style={{ zIndex: Z_INDEX.CONTENT }}>
+      <div className="container relative flex flex-col items-center justify-center min-h-[calc(110vh-220px)] px-4" style={{ zIndex: Z_INDEX.CONTENT }}>
         {/* Content Box - Responsive width and padding */}
         <div className="w-full max-w-4xl mx-auto rounded-2xl border border-white/40 bg-white/30 p-4 sm:p-6 md:p-8 text-black shadow-lg backdrop-blur supports-[backdrop-filter]:bg-white/25 mb-6 md:mb-8">
           <h1 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4 md:mb-6 text-left">
@@ -47,7 +42,7 @@ export function AboutSection({ isVisible }: AboutSectionProps) {
         </button>
       </div>
 
-      <div className="absolute inset-0 bg-gradient-to-b from-white/10 to-transparent" style={{ zIndex: Z_INDEX.BACKGROUND }} />
+      {/* overlay decorativo removido aquí porque el fondo es fijo en HomePage */}
     </section>
   )
 }

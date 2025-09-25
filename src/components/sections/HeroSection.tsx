@@ -11,13 +11,8 @@ export function HeroSection({ isVisible }: HeroSectionProps) {
   return (
     <section
       id="inicio"
-      className={`fixed inset-0 w-full h-screen overflow-hidden bg-cover bg-center transition-all duration-1000 ease-in-out ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-full'
-      }`}
-      style={{ backgroundImage: `url(${bg})` }}
+      className="relative w-full min-h-screen snap-start pt-20 md:pt-28 lg:pt-32"
     >
-      {/* Header */}
-      <Header />
       
       {/* Logo grande - responsive */}
       <img
@@ -40,7 +35,7 @@ export function HeroSection({ isVisible }: HeroSectionProps) {
         </div>
       </div>
       
-      <div className="absolute inset-0 bg-gradient-to-b from-white/10 to-transparent" style={{ zIndex: Z_INDEX.BACKGROUND }} />
+      {/* overlay decorativo removido aquí porque el fondo es fijo en HomePage */}
     </section>
   )
 }
