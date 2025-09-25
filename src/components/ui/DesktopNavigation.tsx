@@ -10,10 +10,23 @@ export function DesktopNavigation({ currentSection }: DesktopNavigationProps) {
       {NAVIGATION_ITEMS.map((item) => {
         const isActive = item.sectionIndex === currentSection
         
+        const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+          e.preventDefault()
+          const targetId = item.href.replace('#', '')
+          const targetElement = document.getElementById(targetId)
+          if (targetElement) {
+            targetElement.scrollIntoView({ 
+              behavior: 'smooth',
+              block: 'start'
+            })
+          }
+        }
+
         return (
           <a
             key={item.href}
             href={item.href}
+            onClick={handleClick}
             className={`px-3 py-2 rounded-full font-medium transition-all duration-200 whitespace-nowrap flex items-center justify-center h-full ${
               isActive 
                 ? 'text-indigo-700 bg-white/60 shadow-sm' 
