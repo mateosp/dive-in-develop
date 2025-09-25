@@ -28,14 +28,36 @@ export function TeamSection({ isVisible }: TeamSectionProps) {
         <div className="w-full flex-1 flex items-center justify-center">
           <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
             {teamMembers.map((member) => (
-              <div key={member.id} className="flex flex-col items-center text-center">
-                <img
-                  src={member.photo}
-                  alt={member.name}
-                  className="rounded-[24px] w-[140px] h-[200px] sm:w-[180px] sm:h-[260px] md:w-[200px] md:h-[300px] object-cover shadow-md"
-                />
-                <div className="mt-2 text-white text-sm opacity-90 max-w-[200px] hidden md:block">
-                  {member.description}
+              <div
+                key={member.id}
+                className="group relative cursor-pointer w-[140px] sm:w-[180px] md:w-[200px] h-[260px] sm:h-[340px] md:h-[380px]"
+                tabIndex={0}
+              >
+                {/* Contenedor de imagen con banner pegado al borde inferior */}
+                <div className="absolute left-1/2 top-0 -translate-x-1/2 w-[140px] sm:w-[180px] md:w-[200px]">
+                  <div className="relative">
+                    {/* Foto */}
+                    <img
+                      src={member.photo}
+                      alt={member.name}
+                      className="rounded-[24px] w-[140px] h-[200px] sm:w-[180px] sm:h-[260px] md:w-[200px] md:h-[300px] object-cover shadow-md transition-transform duration-300 ease-out group-hover:-translate-y-2 group-active:-translate-y-2 group-focus:-translate-y-2"
+                    />
+                    {/* Banner dentro de la foto, alineado al borde inferior */}
+                    <img
+                      src={member.banner}
+                      alt={`${member.name} banner`}
+                      className="absolute left-1/2 bottom-0 -translate-x-1/2 w-[85%] sm:w-[80%] md:w-[95%] rounded-[16px] shadow-lg"
+                    />
+                  </div>
+                </div>
+
+                {/* Descripción oculta, aparece con efecto glass */}
+                <div
+                  className="absolute inset-x-0 bottom-0 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 group-active:opacity-100 group-focus:opacity-100 transition-all duration-300"
+                >
+                  <div className="rounded-2xl border border-white/40 bg-white/30 px-3 py-2 text-[11px] sm:text-xs md:text-sm text-black shadow-lg backdrop-blur supports-[backdrop-filter]:bg-white/25">
+                    {member.description}
+                  </div>
                 </div>
               </div>
             ))}
