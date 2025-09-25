@@ -13,8 +13,8 @@ export function Header() {
   return (
     <header className="relative py-4 md:py-6" style={{ zIndex: Z_INDEX.HEADER }}>
       <div className="container relative flex flex-col items-center gap-4 pt-8 md:pt-12 lg:pt-14">
-        {/* Logo - Posición original (absoluta) */}
-        <Logo className="absolute left-4 top-0 md:left-2 md:top-1" />
+        {/* Logo fijado en esquina superior izquierda */}
+        <Logo className="fixed left-4 top-4 md:left-6 md:top-6" />
 
         {/* Desktop Navigation */}
         <DesktopNavigation currentSection={currentSection} />

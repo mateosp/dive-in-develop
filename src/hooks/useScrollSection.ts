@@ -10,8 +10,10 @@ export function useScrollSection() {
 
       if (scrollPosition < windowHeight * 0.5) {
         setCurrentSection(0) // Hero section
-      } else {
+      } else if (scrollPosition < windowHeight * 1.5) {
         setCurrentSection(1) // About section
+      } else {
+        setCurrentSection(2) // Team section
       }
     }
 
