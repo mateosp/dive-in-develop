@@ -6,7 +6,7 @@ interface DesktopNavigationProps {
 
 export function DesktopNavigation({ currentSection }: DesktopNavigationProps) {
   return (
-    <nav className="hidden lg:flex mt-3 w-[90%] items-center justify-between rounded-full border border-white/40 bg-white/30 px-4 py-2 text-base shadow-lg backdrop-blur supports-[backdrop-filter]:bg-white/25 sm:mt-4 sm:px-6">
+    <nav className="hidden lg:flex mt-3 w-[90%] items-stretch justify-center gap-3 sm:gap-4 lg:gap-6 rounded-full border border-white/40 bg-white/30 px-4 text-base shadow-lg backdrop-blur supports-[backdrop-filter]:bg-white/25 sm:mt-4 sm:px-6">
       {NAVIGATION_ITEMS.map((item) => {
         const isActive = item.sectionIndex === currentSection
         
@@ -14,7 +14,7 @@ export function DesktopNavigation({ currentSection }: DesktopNavigationProps) {
           <a
             key={item.href}
             href={item.href}
-            className={`px-2 py-1 rounded-full font-medium transition-all duration-200 whitespace-nowrap ${
+            className={`px-3 py-2 rounded-full font-medium transition-all duration-200 whitespace-nowrap flex items-center justify-center h-full ${
               isActive 
                 ? 'text-indigo-700 bg-white/60 shadow-sm' 
                 : 'text-black hover:text-indigo-600 hover:bg-white/20'
