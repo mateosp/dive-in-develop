@@ -3,6 +3,7 @@ import { lazy } from 'react'
 
 const HomePage = lazy(() => import('../features/home/HomePage'))
 const AboutPage = lazy(() => import('../features/about/AboutPage'))
+const NotFound = lazy(() => import('../components/pages/NotFound'))
 
 export const router = createBrowserRouter([
   {
@@ -14,6 +15,7 @@ export const router = createBrowserRouter([
     children: [
       { index: true, Component: HomePage },
       { path: 'about', Component: AboutPage },
+      { path: '*', Component: NotFound },
     ],
   },
 ])

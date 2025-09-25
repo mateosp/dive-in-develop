@@ -1,73 +1,157 @@
-# Welcome to your Lovable project
+# Potencia-Liquid-Glass
 
-## Project info
+Una aplicación web moderna con efectos de glassmorphism y navegación fluida, construida con React, TypeScript y Tailwind CSS.
 
-**URL**: https://lovable.dev/projects/bdca592f-af62-4546-9372-df512bceb767
+## 🚀 Stack Tecnológico
 
-## How can I edit this code?
+- **React 18** - Biblioteca de UI con Hooks y Suspense
+- **TypeScript** - Tipado estático para JavaScript
+- **Vite** - Build tool ultrarrápido
+- **Tailwind CSS** - Framework de CSS utility-first
+- **React Router** - Routing del lado del cliente
+- **TanStack Query** - Manejo de estado del servidor
+- **Lucide React** - Biblioteca de iconos
 
-There are several ways of editing your application.
+## 📁 Estructura del Proyecto
 
-**Use Lovable**
+```
+src/
+├── app/                    # Configuración de la aplicación
+│   ├── router.tsx         # Configuración de rutas
+│   └── ui/
+│       └── RootLayout.tsx # Layout principal
+├── components/            # Componentes reutilizables
+│   ├── layout/           # Componentes de layout
+│   │   └── Header.tsx    # Header principal
+│   ├── pages/            # Páginas específicas
+│   │   └── NotFound.tsx  # Página 404
+│   ├── sections/         # Secciones de página
+│   │   ├── HeroSection.tsx
+│   │   └── AboutSection.tsx
+│   └── ui/               # Componentes de UI base
+│       ├── Logo.tsx
+│       ├── DesktopNavigation.tsx
+│       ├── MobileNavigation.tsx
+│       └── MobileMenuButton.tsx
+├── features/             # Features por dominio
+│   ├── home/
+│   │   └── HomePage.tsx
+│   └── about/
+│       └── AboutPage.tsx
+├── hooks/                # Hooks personalizados
+│   ├── useScrollSection.ts
+│   └── useMobileMenu.ts
+├── lib/                  # Utilidades y constantes
+│   └── constants.ts
+└── assets/               # Recursos estáticos
+    ├── background.png
+    ├── logoPotencia.png
+    └── logoPotenciaTransparente.png
+```
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/bdca592f-af62-4546-9372-df512bceb767) and start prompting.
+## 🎨 Características de Diseño
 
-Changes made via Lovable will be committed automatically to this repo.
+### Glassmorphism
+- Efectos de cristal líquido con `backdrop-blur`
+- Transparencias controladas con CSS variables
+- Bordes semitransparentes para profundidad
 
-**Use your preferred IDE**
+### Responsive Design
+- Mobile-first approach
+- Navegación adaptativa (desktop/mobile)
+- Tipografía y espaciado escalables
+- Imágenes responsivas con `object-fit`
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Navegación Inteligente
+- Detección automática de sección activa
+- Transiciones suaves entre secciones
+- Menú hamburguesa para móviles
+- Estados visuales claros (activo/hover)
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## 🛠️ Scripts Disponibles
 
-Follow these steps:
+```bash
+# Desarrollo
+npm run dev
+
+# Build de producción
+npm run build
+
+# Preview del build
+npm run preview
+
+# Linting
+npm run lint
+
+# Formateo de código
+npm run format
+```
+
+## 📱 Funcionalidades
+
+### Navegación por Scroll
+- Detección automática de la sección visible
+- Actualización del estado de navegación
+- Transiciones fluidas entre secciones
+
+### Menú Móvil
+- Botón hamburguesa con animación
+- Dropdown con fondo sólido
+- Z-index optimizado para evitar superposiciones
+- Cierre automático al navegar
+
+### Optimizaciones
+- Lazy loading de rutas
+- Componentes altamente reutilizables
+- Hooks personalizados para lógica compartida
+- Constantes centralizadas para mantenimiento
+
+## 🎯 Buenas Prácticas Implementadas
+
+1. **Separación de Responsabilidades**
+   - Componentes pequeños y enfocados
+   - Hooks para lógica reutilizable
+   - Constantes centralizadas
+
+2. **Accesibilidad**
+   - Etiquetas aria-label apropiadas
+   - Navegación por teclado
+   - Contraste de colores optimizado
+
+3. **Performance**
+   - Code splitting automático
+   - Lazy loading de rutas
+   - Optimización de imágenes
+
+4. **Mantenibilidad**
+   - TypeScript para tipado
+   - Estructura de carpetas clara
+   - Nomenclatura consistente
+
+---
+
+## Editar el Proyecto
+
+**Usar Lovable (Recomendado)**
+
+Visita el [Proyecto en Lovable](https://lovable.dev/projects/bdca592f-af62-4546-9372-df512bceb767) y comienza a usar prompts.
+
+**Usar tu IDE preferido**
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+# Clonar el repositorio
+git clone <TU_URL_GIT>
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# Navegar al directorio
+cd <NOMBRE_DEL_PROYECTO>
 
-# Step 3: Install the necessary dependencies.
+# Instalar dependencias
 npm i
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Iniciar servidor de desarrollo
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+## Deployment
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/bdca592f-af62-4546-9372-df512bceb767) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Abre [Lovable](https://lovable.dev/projects/bdca592f-af62-4546-9372-df512bceb767) y haz clic en Share -> Publish.
