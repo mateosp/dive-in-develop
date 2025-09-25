@@ -11,7 +11,7 @@ export function HeroSection({ isVisible }: HeroSectionProps) {
   return (
     <section
       id="inicio"
-      className="relative w-full min-h-screen snap-start pt-20 md:pt-28 lg:pt-32"
+      className="relative w-full min-h-screen snap-start pt-20 md:pt-28 lg:pt-32 pb-16"
     >
       
       {/* Logo grande - responsive */}

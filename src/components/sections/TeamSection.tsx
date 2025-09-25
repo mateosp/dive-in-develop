@@ -11,7 +11,7 @@ export function TeamSection({ isVisible }: TeamSectionProps) {
   return (
     <section
       id="equipo"
-      className="relative w-full min-h-screen snap-start pt-24 md:pt-32 lg:pt-36"
+      className="relative w-full min-h-screen snap-start pt-24 md:pt-32 lg:pt-36 pb-16"
     >
       {/* Header fijo está en HomePage */}
 

@@ -74,7 +74,7 @@ export function CasesSection({ isVisible }: CasesSectionProps) {
   }, [index, slideWidth])
 
   return (
-    <section id="casos" className="relative w-full min-h-screen snap-start pt-[200px]">
+    <section id="casos" className="relative w-full min-h-screen snap-start pt-[180px] pb-16">
       <div className="container relative px-4" style={{ zIndex: Z_INDEX.CONTENT }}>
         {/* Contenedor del carrusel con botones externos */}
         <div className="relative flex items-center gap-4">

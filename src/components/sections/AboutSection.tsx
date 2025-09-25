@@ -10,7 +10,7 @@ export function AboutSection({ isVisible }: AboutSectionProps) {
   return (
     <section
       id="sobre-nosotros"
-      className="relative w-full min-h-screen snap-start pt-24 md:pt-32 lg:pt-36"
+      className="relative w-full min-h-screen snap-start pt-24 md:pt-32 lg:pt-36 pb-16"
     >
 
       {/* About Content - Responsive */}
