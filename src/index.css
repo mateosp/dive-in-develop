@@ -1,52 +1,11 @@
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
+@import "tailwindcss";
 
-:root {
-  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+@theme {
+  --font-sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto,
     Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  
-  /* Potencia Brand Colors */
-  --color-primary: 37 99% 50%; /* Orange for branding */
-  --color-primary-foreground: 0 0% 100%;
-  
-  --color-glass: 0 0% 100%; /* White for glass effect */
-  --color-glass-border: 0 0% 100%; /* White border */
-  
-  --color-text-on-glass: 0 0% 0%; /* Black text on glass */
-  --color-text-on-hero: 0 0% 100%; /* White text on hero */
-  
-  /* Glass morphism effects */
-  --glass-bg: rgba(255, 255, 255, 0.3);
-  --glass-border: rgba(255, 255, 255, 0.4);
-  
-  /* Gradients */
-  --gradient-hero: linear-gradient(to bottom, rgba(255, 255, 255, 0.1), transparent);
-  
-  /* Shadows */
-  --shadow-glass: 0 8px 32px rgba(31, 38, 135, 0.1);
-  
-  /* Transitions */
-  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-section: all 1s ease-in-out;
 }
 
-/* Glass morphism utilities */
-.glass-effect {
-  background: var(--glass-bg);
-  border: 1px solid var(--glass-border);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  box-shadow: var(--shadow-glass);
-}
-
-/* Smooth transitions for sections */
-.section-transition {
-  transition: var(--transition-section);
-}
-
-/* Hero text styling */
-.hero-text {
-  color: var(--color-text-on-hero);
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+@utility container {
+  margin-inline: auto;
+  padding-inline: 1rem;
 }
