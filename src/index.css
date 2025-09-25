@@ -1,11 +1,10 @@
-@import "tailwindcss";
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
-@theme {
-  --font-sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto,
-    Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-}
-
-@utility container {
-  margin-inline: auto;
-  padding-inline: 1rem;
+@layer utilities {
+  .container {
+    margin-inline: auto;
+    padding-inline: 1rem;
+  }
 }
