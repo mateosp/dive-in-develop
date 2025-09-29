@@ -14,7 +14,7 @@ export function AboutSection({ isVisible }: AboutSectionProps) {
     >
 
       {/* About Content - Responsive */}
-      <div className="container relative flex flex-col items-center justify-center min-h-[calc(110vh-220px)] px-4" style={{ zIndex: Z_INDEX.CONTENT }}>
+      <div className="container relative flex flex-col items-center justify-center min-h-[calc(105vh-220px)] px-4" style={{ zIndex: Z_INDEX.CONTENT }}>
         {/* Content Box - Responsive width and padding */}
         <div className="w-full max-w-4xl mx-auto rounded-2xl border border-white/40 bg-white/30 p-4 sm:p-6 md:p-8 text-black shadow-lg backdrop-blur supports-[backdrop-filter]:bg-white/25 mb-6 md:mb-8">
           <h1 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4 md:mb-6 text-left">

@@ -17,7 +17,7 @@ export function TeamSection({ isVisible }: TeamSectionProps) {
 
       {/* Contenedor central para imágenes y botón */}
       <div
-        className="container relative flex flex-col items-center justify-between min-h-[calc(110vh-220px)] pt-4 pb-6 px-4"
+        className="container relative flex flex-col items-center justify-between min-h-[calc(90svh-220px)] md:min-h-[calc(105vh-220px)] pt-4 pb-6 px-4"
         style={{ zIndex: Z_INDEX.CONTENT }}
       >
         {/* Grid de miembros centrada verticalmente entre navbar y final de sección */}

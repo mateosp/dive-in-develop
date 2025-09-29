@@ -3,6 +3,7 @@ import { HeroSection } from '../../components/sections/HeroSection'
 import { AboutSection } from '../../components/sections/AboutSection'
 import { TeamSection } from '../../components/sections/TeamSection'
 import { CasesSection } from '../../components/sections/CasesSection'
+import { ServicesSection } from '../../components/sections/ServicesSection'
 import bg from '../../assets/background.png'
 import { Header } from '../../components/layout/Header'
 import { Z_INDEX } from '../../lib/constants'
@@ -34,8 +35,11 @@ export default function HomePage() {
         {/* Team Section */}
         <TeamSection isVisible={currentSection === 2} />
 
+        {/* Services Section */}
+        <CasesSection isVisible={currentSection === 3} />
+
       {/* Cases Section */}
-      <CasesSection isVisible={currentSection === 3} />
+        <ServicesSection isVisible={currentSection === 4} />
       </div>
     </>
   )
