@@ -18,6 +18,7 @@ export function useScrollSection() {
           else if (id === 'sobre-nosotros') setCurrentSection(1)
           else if (id === 'equipo') setCurrentSection(2)
           else if (id === 'casos') setCurrentSection(3)
+          else if (id === 'servicios') setCurrentSection(4)
         }
       },
       {

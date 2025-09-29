@@ -94,7 +94,7 @@ export function CasesSection({ isVisible }: CasesSectionProps) {
                   style={{ width: `${slideWidth}px` }}
                 >
                   <div className="w-full rounded-3xl border border-white/60 bg-white/50 shadow-xl backdrop-blur supports-[backdrop-filter]:bg-white/45 p-4 sm:p-6 md:p-8">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
                       {/* Imagen */}
                       <div className="w-full">
                         <img
@@ -119,12 +119,15 @@ export function CasesSection({ isVisible }: CasesSectionProps) {
 
         </div>
 
-        {/* Indicador de posición */}
+        {/* Indicador de posición (clicable) */}
         <div className="mt-6 flex items-center justify-center gap-2">
           {casesData.map((_, i) => (
-            <span
+            <button
               key={i}
-              className={`w-2 h-2 rounded-full ${i === index ? 'bg-white/80' : 'bg-white/30'}`}
+              type="button"
+              aria-label={`Ir al caso ${i + 1}`}
+              onClick={() => setIndex(i)}
+              className={`w-2 h-2 rounded-full transition-colors duration-200 ${i === index ? 'bg-white/80' : 'bg-white/30 hover:bg-white/50'}`}
             />
           ))}
         </div>

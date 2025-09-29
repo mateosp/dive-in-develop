@@ -67,7 +67,7 @@ export function ServicesSection({ isVisible }: ServicesSectionProps) {
       <div className="container relative px-4" style={{ zIndex: Z_INDEX.CONTENT }}>
         <div
           ref={containerRef}
-          className="relative overflow-y-auto scrollbar-hide snap-y snap-mandatory"
+          className="overflow-y-auto scrollbar-hide snap-y snap-mandatory"
           style={{ height: containerHeight ? `${containerHeight}px` : undefined, rowGap: `${GAP_PX}px`, scrollbarWidth: 'none', msOverflowStyle: 'none' }}
         >
           <div className="flex flex-col" style={{ gap: `${GAP_PX}px` }}>
@@ -92,17 +92,18 @@ export function ServicesSection({ isVisible }: ServicesSectionProps) {
             ))}
           </div>
 
-          {/* Indicador vertical de posición */}
-          <div className="pointer-events-auto absolute right-2 top-1/2 -translate-y-1/2 flex flex-col items-center gap-2 select-none">
-            {servicesData.map((_, i) => (
-              <button
-                key={i}
-                aria-label={`Ir al servicio ${i + 1}`}
-                onClick={() => setIndex(i)}
-                className={`transition-colors duration-200 w-2 h-2 rounded-full ${i === index ? 'bg-white/80' : 'bg-white/30 hover:bg-white/50'}`}
-              />
-            ))}
-          </div>
+        </div>
+
+        {/* Indicador vertical de posición (fijo respecto a la sección) */}
+        <div className="pointer-events-auto absolute right-2 top-1/2 -translate-y-1/2 flex flex-col items-center gap-2 select-none">
+          {servicesData.map((_, i) => (
+            <button
+              key={i}
+              aria-label={`Ir al servicio ${i + 1}`}
+              onClick={() => setIndex(i)}
+              className={`transition-colors duration-200 w-2 h-2 rounded-full ${i === index ? 'bg-white/80' : 'bg-white/30 hover:bg-white/50'}`}
+            />
+          ))}
         </div>
       </div>
     </section>
