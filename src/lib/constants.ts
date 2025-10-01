@@ -4,7 +4,7 @@ export const NAVIGATION_ITEMS = [
   { href: '#equipo', label: 'Nuestro equipo', sectionIndex: 2 },
   { href: '#casos', label: 'Casos de Éxito', sectionIndex: 3 },
   { href: '#servicios', label: 'Servicios', sectionIndex: 4 },
-  { href: '#clientes', label: 'Clientes', sectionIndex: null },
+  { href: '#clientes', label: 'Clientes', sectionIndex: 5 },
   { href: '#publicaciones', label: 'Publicaciones', sectionIndex: null },
   { href: '#contacto', label: 'Contáctanos', sectionIndex: null },
 ] as const

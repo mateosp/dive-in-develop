@@ -4,6 +4,7 @@ import { AboutSection } from '../../components/sections/AboutSection'
 import { TeamSection } from '../../components/sections/TeamSection'
 import { CasesSection } from '../../components/sections/CasesSection'
 import { ServicesSection } from '../../components/sections/ServicesSection'
+import { ClientsSection } from '../../components/sections/ClientsSection'
 import bg from '../../assets/background.png'
 import { Header } from '../../components/layout/Header'
 import { Z_INDEX } from '../../lib/constants'
@@ -38,8 +39,11 @@ export default function HomePage() {
         {/* Services Section */}
         <CasesSection isVisible={currentSection === 3} />
 
-      {/* Cases Section */}
+        {/* Cases Section */}
         <ServicesSection isVisible={currentSection === 4} />
+
+        {/* Clients Section */}
+        <ClientsSection isVisible={currentSection === 5} />
       </div>
     </>
   )
