@@ -49,7 +49,14 @@ export function TeamSection({ isVisible }: TeamSectionProps) {
 
                 {/* Descripción debajo de la foto, nunca encima */}
                 <div className="absolute left-1/2 top-[200px] sm:top-[260px] md:top-[300px] -translate-x-1/2 opacity-0 group-hover:opacity-100 group-active:opacity-100 group-focus:opacity-100 transition-opacity duration-300 pointer-events-none z-10">
-                  <div className="w-[260px] sm:w-[320px] md:w-[380px] max-w-none rounded-2xl border border-white/40 bg-white/30 px-3 py-2 text-[11px] sm:text-xs md:text-sm text-black shadow-lg backdrop-blur supports-[backdrop-filter]:bg-white/25">
+                  <div 
+                    className="w-[260px] sm:w-[320px] md:w-[380px] max-w-none rounded-2xl border border-white/30 px-3 py-2 text-[11px] sm:text-xs md:text-sm text-black shadow-lg backdrop-blur-md"
+                    style={{
+                      background: 'linear-gradient(135deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.6) 100%)',
+                      backdropFilter: 'blur(10px)',
+                      WebkitBackdropFilter: 'blur(10px)',
+                    }}
+                  >
                     {member.description}
                   </div>
                 </div>
@@ -59,7 +66,14 @@ export function TeamSection({ isVisible }: TeamSectionProps) {
         </div>
 
         {/* Botón ver más estilo "liquid glass" */}
-        <button className="inline-block rounded-full border border-white/40 bg-white/30 px-6 py-3 text-sm sm:text-base text-black shadow-lg backdrop-blur supports-[backdrop-filter]:bg-white/25 hover:bg-white/40 transition-all duration-300">
+        <button 
+          className="inline-block rounded-full border border-white/30 px-6 py-3 text-sm sm:text-base text-black shadow-lg backdrop-blur-md hover:scale-105 transition-all duration-300"
+          style={{
+            background: 'linear-gradient(135deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.6) 100%)',
+            backdropFilter: 'blur(10px)',
+            WebkitBackdropFilter: 'blur(10px)',
+          }}
+        >
           ver más
         </button>
       </div>
