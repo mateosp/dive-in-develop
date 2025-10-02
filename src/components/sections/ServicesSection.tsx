@@ -85,7 +85,7 @@ export function ServicesSection({ isVisible }: ServicesSectionProps) {
   }, [index, itemHeight])
 
   return (
-    <section id="servicios" className="relative w-full min-h-[80svh] md:min-h-screen snap-start pt-[calc(var(--header-height)+30px)] md:pt-[calc(var(--header-height)+16px)] pb-50 md:pb-8">
+    <section id="servicios" className="relative w-full min-h-[80svh] md:min-h-screen snap-start pt-[calc(var(--header-height)+30px)] md:pt-[calc(var(--header-height)+16px)] pb-24 md:pb-8">
       <div className="container relative px-4" style={{ zIndex: Z_INDEX.CONTENT }}>
         {/* Versión móvil: carrusel horizontal de 2 en 2 */}
         <div className="md:hidden">
