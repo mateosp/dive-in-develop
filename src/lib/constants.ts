@@ -5,8 +5,8 @@ export const NAVIGATION_ITEMS = [
   { href: '#casos', label: 'Casos de Éxito', sectionIndex: 3 },
   { href: '#servicios', label: 'Servicios', sectionIndex: 4 },
   { href: '#clientes', label: 'Clientes', sectionIndex: 5 },
+  { href: '#footer', label: 'Contacto', sectionIndex: 6 },
   { href: '#publicaciones', label: 'Publicaciones', sectionIndex: null },
-  { href: '#contacto', label: 'Contáctanos', sectionIndex: null },
 ] as const
 
 export const Z_INDEX = {

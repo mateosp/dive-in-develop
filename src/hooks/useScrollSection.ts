@@ -20,6 +20,7 @@ export function useScrollSection() {
           else if (id === 'casos') setCurrentSection(3)
           else if (id === 'servicios') setCurrentSection(4)
           else if (id === 'clientes') setCurrentSection(5)
+          else if (id === 'footer') setCurrentSection(6)
         }
       },
       {

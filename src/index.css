@@ -33,4 +33,21 @@
     background: rgba(255, 255, 255, 0.3);
     border: 1px solid rgba(255, 255, 255, 0.4);
   }
+  
+  /* Footer como límite final */
+  #footer {
+    position: relative;
+    z-index: 999;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+  
+  /* Prevenir scroll después del footer */
+  body {
+    overflow-x: hidden;
+  }
+  
+  #snap-scroll {
+    scroll-snap-stop: always;
+  }
 }

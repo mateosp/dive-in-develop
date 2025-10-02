@@ -5,6 +5,7 @@ import { TeamSection } from '../../components/sections/TeamSection'
 import { CasesSection } from '../../components/sections/CasesSection'
 import { ServicesSection } from '../../components/sections/ServicesSection'
 import { ClientsSection } from '../../components/sections/ClientsSection'
+import { FooterSection } from '../../components/sections/FooterSection'
 import bg from '../../assets/background.png'
 import { Header } from '../../components/layout/Header'
 import { Z_INDEX } from '../../lib/constants'
@@ -26,7 +27,7 @@ export default function HomePage() {
       </div>
 
       {/* Contenedor con scroll-snap */}
-      <div id="snap-scroll" className="relative h-screen overflow-y-scroll snap-y snap-proximity" style={{ zIndex: Z_INDEX.CONTENT }}>
+      <div id="snap-scroll" className="relative h-screen overflow-y-scroll snap-y snap-proximity" style={{ zIndex: Z_INDEX.CONTENT, scrollBehavior: 'smooth' }}>
         {/* Hero Section */}
         <HeroSection isVisible={currentSection === 0} />
 
@@ -44,6 +45,9 @@ export default function HomePage() {
 
         {/* Clients Section */}
         <ClientsSection isVisible={currentSection === 5} />
+
+        {/* Footer Section */}
+        <FooterSection isVisible={currentSection === 6} />
       </div>
     </>
   )
