@@ -25,12 +25,12 @@ export function HeroSection({ isVisible }: HeroSectionProps) {
       {/* Contenido principal */}
       <div className="container relative flex items-center justify-center min-h-[calc(100vh-200px)] px-4" style={{ zIndex: Z_INDEX.CONTENT }}>
         <div className="max-w-xl text-left text-white drop-shadow-md">
-          <h1 className="text-2xl font-semibold sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl leading-tight">
+          <h1 className="text-2xl font-gotham-book sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl leading-tight">
             El crecimiento de las
             <br />
             ciudades es
             <br />
-            <span className="font-extrabold">POTENCIA</span> infinita.
+            <span className="font-gotham-bold">POTENCIA</span> infinita.
           </h1>
         </div>
       </div>

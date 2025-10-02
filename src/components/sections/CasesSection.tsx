@@ -106,9 +106,9 @@ export function CasesSection({ isVisible }: CasesSectionProps) {
 
                       {/* Texto */}
                       <div className="text-left text-black">
-                        <h2 className="text-2xl md:text-3xl font-extrabold mb-3">{item.title}</h2>
-                        <p className="text-sm md:text-base leading-relaxed opacity-80 whitespace-pre-line">{item.description}</p>
-                        <p className="text-xs md:text-sm mt-4 italic opacity-70">{item.subtitle}</p>
+                        <h2 className="text-2xl md:text-3xl font-gotham-bold mb-3 text-custom-blue">{item.title}</h2>
+                        <p className="text-sm md:text-base leading-relaxed opacity-80 whitespace-pre-line font-gotham-book">{item.description}</p>
+                        <p className="text-xs md:text-sm mt-4 italic opacity-70 font-gotham-book">{item.subtitle}</p>
                       </div>
                     </div>
                   </div>
@@ -134,7 +134,7 @@ export function CasesSection({ isVisible }: CasesSectionProps) {
 
         {/* Botón ver más */}
         <div className="flex justify-center mt-6">
-          <button className="inline-block rounded-full border border-white/40 bg-white/30 px-6 py-3 text-sm sm:text-base text-black shadow-lg backdrop-blur supports-[backdrop-filter]:bg-white/25 hover:bg-white/40 transition-all duration-300">
+          <button className="inline-block rounded-full border border-white/40 bg-white/30 px-6 py-3 text-sm sm:text-base text-black shadow-lg backdrop-blur supports-[backdrop-filter]:bg-white/25 hover:bg-white/40 transition-all duration-300 font-gotham-book">
             ver más
           </button>
         </div>

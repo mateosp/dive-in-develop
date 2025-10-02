@@ -45,7 +45,7 @@ export function FooterSection({ isVisible }: FooterSectionProps) {
               </div>
 
               {/* Texto de suscripción */}
-              <p className="text-white text-lg text-center md:text-left max-w-md">
+              <p className="text-white text-lg text-center md:text-left max-w-md font-gotham-book">
                 Suscríbete para estar enterado <br/> de nuestras novedades
               </p>
 
@@ -58,11 +58,11 @@ export function FooterSection({ isVisible }: FooterSectionProps) {
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="Email"
                     required
-                    className="flex-1 px-3 py-2 bg-gray-100 text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
+                    className="flex-1 px-3 py-2 bg-gray-100 text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm font-gotham-book"
                   />
                   <button
                     type="submit"
-                    className="px-4 py-2 bg-blue-600 text-white font-semibold hover:bg-blue-700 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
+                    className="px-4 py-2 bg-blue-600 text-white font-gotham-book hover:bg-blue-700 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
                   >
                     Enviar
                   </button>

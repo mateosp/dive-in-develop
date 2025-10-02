@@ -19,10 +19,10 @@ export function MobileNavigation({ currentSection, isOpen, onClose }: MobileNavi
             <a
               key={item.href}
               href={item.href}
-              className={`block px-6 py-3 font-medium transition-colors duration-200 ${
+              className={`block px-6 py-3 font-gotham-book transition-colors duration-200 ${
                 isActive 
-                  ? 'text-indigo-700 bg-indigo-50' 
-                  : 'text-gray-800 hover:text-indigo-600 hover:bg-gray-50'
+                  ? 'text-custom-blue bg-indigo-50' 
+                  : 'text-gray-800 hover:text-custom-blue hover:bg-gray-50'
               }`}
               onClick={onClose}
             >

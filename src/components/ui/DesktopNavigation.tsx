@@ -27,10 +27,10 @@ export function DesktopNavigation({ currentSection }: DesktopNavigationProps) {
             key={item.href}
             href={item.href}
             onClick={handleClick}
-            className={`px-3 py-2 rounded-full font-medium transition-all duration-200 whitespace-nowrap flex items-center justify-center h-full ${
+            className={`px-3 py-2 rounded-full font-gotham-book transition-all duration-200 whitespace-nowrap flex items-center justify-center h-full ${
               isActive 
-                ? 'text-indigo-700 bg-white/60 shadow-sm' 
-                : 'text-black hover:text-indigo-600 hover:bg-white/20'
+                ? 'text-custom-blue bg-white/60 shadow-sm' 
+                : 'text-black hover:text-custom-blue hover:bg-white/20'
             }`}
           >
             {item.label}

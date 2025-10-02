@@ -109,9 +109,9 @@ export function ServicesSection({ isVisible }: ServicesSectionProps) {
                           <img src={servicesData[groupIndex * 2].image} alt={servicesData[groupIndex * 2].title} className="w-full h-full object-contain" />
                         </div>
                         {/* Título */}
-                        <h3 className="text-lg font-extrabold text-black">{servicesData[groupIndex * 2].title}</h3>
+                        <h3 className="text-lg font-gotham-bold text-custom-blue">{servicesData[groupIndex * 2].title}</h3>
                         {/* Texto */}
-                        <p className="text-sm leading-relaxed opacity-80 text-black flex-1">
+                        <p className="text-sm leading-relaxed opacity-80 text-black flex-1 font-gotham-book">
                           {servicesData[groupIndex * 2].description}
                         </p>
                       </div>
@@ -126,9 +126,9 @@ export function ServicesSection({ isVisible }: ServicesSectionProps) {
                             <img src={servicesData[groupIndex * 2 + 1].image} alt={servicesData[groupIndex * 2 + 1].title} className="w-full h-full object-contain" />
                           </div>
                           {/* Título */}
-                          <h3 className="text-lg font-extrabold text-black">{servicesData[groupIndex * 2 + 1].title}</h3>
+                          <h3 className="text-lg font-gotham-bold text-custom-blue">{servicesData[groupIndex * 2 + 1].title}</h3>
                           {/* Texto */}
-                          <p className="text-sm leading-relaxed opacity-80 text-black flex-1">
+                          <p className="text-sm leading-relaxed opacity-80 text-black flex-1 font-gotham-book">
                             {servicesData[groupIndex * 2 + 1].description}
                           </p>
                         </div>
@@ -175,8 +175,8 @@ export function ServicesSection({ isVisible }: ServicesSectionProps) {
                       <img src={srv.image} alt={srv.title} className="w-full h-full object-contain" />
                     </div>
                     <div className="text-left text-black">
-                      <h3 className="text-sm md:text-lg font-extrabold mb-0.5 md:mb-1">{srv.title}</h3>
-                      <p className="text-[10px] md:text-sm leading-tight md:leading-relaxed opacity-80">
+                      <h3 className="text-sm md:text-lg font-gotham-bold mb-0.5 md:mb-1 text-custom-blue">{srv.title}</h3>
+                      <p className="text-[10px] md:text-sm leading-tight md:leading-relaxed opacity-80 font-gotham-book">
                         {srv.description}
                       </p>
                     </div>
