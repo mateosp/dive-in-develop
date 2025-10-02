@@ -11,21 +11,21 @@ export const servicesData: ServiceItem[] = [
     title: 'Gerencia de Territorio',
     description:
       'Metodología de trabajo gerencial que busca acompañar a los entes territoriales para mejorar sus indicadores de gestión y buscar eficiencia en las labores de la administración pública, enfocado en proyectos emblemáticos, contratación, presupuesto, área financiera y jurídica.',
-    image: '/src/assets/gerenciaTerritorio.svg',
+    image: '/src/assets/gerenciaTerritorio.png'
   },
   {
     id: 'urbanismo-espacio-publico',
     title: 'Urbanismo y Espacio público',
     description:
       'Acompañamiento a entes territoriales para planear, priorizar y ejecutar intervenciones urbanas que mejoren la habitabilidad y el uso eficiente del espacio público con criterios de sostenibilidad y participación ciudadana.',
-    image: '/src/assets/urbanismoEspacioP.svg',
+    image: '/src/assets/urbanismoEspacioP.png',
   },
   {
     id: 'desarrollo-economico-turismo',
     title: 'Desarrollo Económico y Turismo',
     description:
       'Diseño e implementación de estrategias para dinamizar la actividad económica, fortalecer sectores productivos y posicionar destinos turísticos, articulando actores públicos y privados.',
-    image: '/src/assets/desarrolloEconomicoT.svg',
+    image: '/src/assets/desarrolloEconomicoT.png',
   },
   {
     id: 'finanzas-publicas',
