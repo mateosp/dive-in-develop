@@ -1,30 +1,12 @@
 import { Z_INDEX } from '../../lib/constants'
 import { useState, useEffect } from 'react'
+import { clientsData } from '../../features/clients/clientsData'
 
 interface ClientsSectionProps {
   isVisible: boolean
 }
 
-// Lista de logos de clientes
-const clientLogos = [
-  { name: 'Alcaldía de Montería', src: '/src/assets/alcaldiaMonteria.png' },
-  { name: 'BID', src: '/src/assets/BID.png' },
-  { name: 'Alcaldía de Cartagena', src: '/src/assets/clienteAlcaldiaCartagena.png' },
-  { name: 'Alcaldía de Valledupar', src: '/src/assets/clienteAlcaldiaValledupar1.png' },
-  { name: 'Argos', src: '/src/assets/clienteArgos.png' },
-  { name: 'Banco de Desarrollo', src: '/src/assets/clienteBancoDesarrollo.png' },
-  { name: 'Cámara de Comercio Santa Marta', src: '/src/assets/clienteCamaraSantaMarta.png' },
-  { name: 'Festival Vallenato', src: '/src/assets/clienteFetivalVallenato.png' },
-  { name: 'Gobernación del Archipiélago', src: '/src/assets/clienteGobernacionArchipielago.png' },
-  { name: 'Gobernación del Atlántico', src: '/src/assets/clienteGobernacionAtlantico.png' },
-  { name: 'Gobernación del Cesar', src: '/src/assets/clienteGobernacionCesar.png' },
-  { name: 'Puerta de Oro', src: '/src/assets/clientePuertaDeOro.png' },
-  { name: 'República Dominicana', src: '/src/assets/clienteRepublicaDominicana.png' },
-  { name: 'Santa Cruz', src: '/src/assets/clienteSantaCruz.png' },
-  { name: 'Santo Domingo', src: '/src/assets/clienteSantoDomingo.png' },
-  { name: 'Gobernación de Córdoba', src: '/src/assets/gobernacionCordoba.png' },
-  { name: 'Tras la Perla', src: '/src/assets/trasLaPerla.png' },
-]
+// Data de clientes importada
 
 export function ClientsSection({ isVisible }: ClientsSectionProps) {
   const [showAllLogos, setShowAllLogos] = useState(false)
@@ -41,8 +23,8 @@ export function ClientsSection({ isVisible }: ClientsSectionProps) {
   }, [])
   
   // En móvil solo mostrar los primeros 8 logos, en desktop mostrar todos
-  const visibleLogos = isMobile && !showAllLogos ? clientLogos.slice(0, 8) : clientLogos
-  const hasMoreLogos = isMobile && clientLogos.length > 8
+  const visibleLogos = isMobile && !showAllLogos ? clientsData.slice(0, 8) : clientsData
+  const hasMoreLogos = isMobile && clientsData.length > 8
 
   return (
     <section id="clientes" className="relative w-full min-h-[80svh] md:min-h-screen snap-start pt-[calc(var(--header-height)-80px)] md:pt-[calc(var(--header-height)+68px)] pb-8">
@@ -62,7 +44,7 @@ export function ClientsSection({ isVisible }: ClientsSectionProps) {
                 }}
               >
                 <img
-                  src={client.src}
+                  src={client.image}
                   alt={client.name}
                   className="w-full h-full object-contain filter drop-shadow-sm group-hover:drop-shadow-md transition-all duration-300"
                   loading="lazy"

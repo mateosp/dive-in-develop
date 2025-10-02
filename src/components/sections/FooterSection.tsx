@@ -1,5 +1,8 @@
 import { Z_INDEX } from '../../lib/constants'
 import { useState } from 'react'
+import footerBG from '../../assets/footerBG.png'
+import logoPotencia2 from '../../assets/logoPotencia2.png'
+import logoPotenciaBlanco from '../../assets/logoPotenciaBlanco.png'
 
 interface FooterSectionProps {
   isVisible: boolean
@@ -26,7 +29,7 @@ export function FooterSection({ isVisible }: FooterSectionProps) {
       <div 
         className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat flex items-center justify-center"
         style={{ 
-          backgroundImage: 'url(/src/assets/footerBG.png)',
+          backgroundImage: `url(${footerBG})`,
           zIndex: Z_INDEX.CONTENT 
         }}
       >
@@ -38,7 +41,7 @@ export function FooterSection({ isVisible }: FooterSectionProps) {
               {/* Logo Potencia */}
               <div className="w-40 h-12 flex items-center justify-center">
                 <img 
-                  src="/src/assets/logoPotencia2.png" 
+                  src={logoPotencia2}
                   alt="Potencia Logo" 
                   className="w-full h-full object-contain"
                 />
@@ -74,7 +77,7 @@ export function FooterSection({ isVisible }: FooterSectionProps) {
             <div className="relative h-full hidden md:flex items-center justify-end -mr-4">
               <div className="w-48 h-48 flex items-center justify-end">
                 <img 
-                  src="/src/assets/logoPotenciaBlanco.png" 
+                  src={logoPotenciaBlanco}
                   alt="Potencia Logo Blanco" 
                   className="w-full h-full object-contain"
                 />
