@@ -37,10 +37,21 @@ export function ServicesSection({ isVisible }: ServicesSectionProps) {
     e.preventDefault()
     e.stopPropagation()
     e.stopImmediatePropagation()
-    if (e.deltaY > 0) {
-      setIndex((i) => Math.min(servicesData.length - 1, i + 1))
-    } else if (e.deltaY < 0) {
-      setIndex((i) => Math.max(0, i - 1))
+    
+    if (window.innerWidth < 768) {
+      // Para móvil: navegación de 2 en 2
+      if (e.deltaY > 0) {
+        setIndex((i) => Math.min(servicesData.length - 1, i + 2))
+      } else if (e.deltaY < 0) {
+        setIndex((i) => Math.max(0, i - 2))
+      }
+    } else {
+      // Para desktop: navegación normal
+      if (e.deltaY > 0) {
+        setIndex((i) => Math.min(servicesData.length - 1, i + 1))
+      } else if (e.deltaY < 0) {
+        setIndex((i) => Math.max(0, i - 1))
+      }
     }
   }
 
@@ -56,9 +67,10 @@ export function ServicesSection({ isVisible }: ServicesSectionProps) {
     if (!scroller) return
     
     if (window.innerWidth < 768) {
-      // Para móvil: scroll horizontal
+      // Para móvil: scroll horizontal por grupos de 2
       const containerWidth = scroller.clientWidth
-      const offset = targetIndex * containerWidth
+      const groupIndex = Math.floor(targetIndex / 2)
+      const offset = groupIndex * containerWidth
       scroller.scrollTo({ left: offset, behavior: 'smooth' })
     } else {
       // Para desktop: scroll vertical
@@ -73,9 +85,9 @@ export function ServicesSection({ isVisible }: ServicesSectionProps) {
   }, [index, itemHeight])
 
   return (
-    <section id="servicios" className="relative w-full min-h-[80svh] md:min-h-screen snap-start pt-[calc(var(--header-height)+80px)] md:pt-[calc(var(--header-height)+16px)] pb-50 md:pb-8">
+    <section id="servicios" className="relative w-full min-h-[80svh] md:min-h-screen snap-start pt-[calc(var(--header-height)+30px)] md:pt-[calc(var(--header-height)+16px)] pb-50 md:pb-8">
       <div className="container relative px-4" style={{ zIndex: Z_INDEX.CONTENT }}>
-        {/* Versión móvil: carrusel horizontal como casos de éxito */}
+        {/* Versión móvil: carrusel horizontal de 2 en 2 */}
         <div className="md:hidden">
           <div
             ref={containerRef}
@@ -83,24 +95,47 @@ export function ServicesSection({ isVisible }: ServicesSectionProps) {
             style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
           >
             <div className="flex items-stretch" style={{ gap: '16px' }}>
-              {servicesData.map((srv, i) => (
+              {Array.from({ length: Math.ceil(servicesData.length / 2) }, (_, groupIndex) => (
                 <div
-                  key={srv.id}
+                  key={groupIndex}
                   className="flex-shrink-0 snap-start w-full"
                 >
-                  <div className="w-full rounded-3xl border border-white/60 bg-white/50 shadow-xl backdrop-blur supports-[backdrop-filter]:bg-white/45 p-4">
-                    <div className="flex flex-col items-center text-center gap-4">
-                      {/* Foto/Logo */}
-                      <div className="w-[120px] h-[120px] flex items-center justify-center">
-                        <img src={srv.image} alt={srv.title} className="w-full h-full object-contain" />
+                  <div className="flex flex-col gap-4 h-[600px]">
+                    {/* Primera carta */}
+                    <div className="h-[290px] rounded-3xl border border-white/60 bg-white/50 shadow-xl backdrop-blur supports-[backdrop-filter]:bg-white/45 p-4">
+                      <div className="flex flex-col items-center text-center gap-3 h-full">
+                        {/* Foto/Logo */}
+                        <div className="w-[80px] h-[80px] flex items-center justify-center">
+                          <img src={servicesData[groupIndex * 2].image} alt={servicesData[groupIndex * 2].title} className="w-full h-full object-contain" />
+                        </div>
+                        {/* Título */}
+                        <h3 className="text-lg font-extrabold text-black">{servicesData[groupIndex * 2].title}</h3>
+                        {/* Texto */}
+                        <p className="text-sm leading-relaxed opacity-80 text-black flex-1">
+                          {servicesData[groupIndex * 2].description}
+                        </p>
                       </div>
-                      {/* Título */}
-                      <h3 className="text-xl font-extrabold text-black">{srv.title}</h3>
-                      {/* Texto */}
-                      <p className="text-sm leading-relaxed opacity-80 text-black">
-                        {srv.description}
-                      </p>
                     </div>
+                    
+                    {/* Segunda carta (si existe) */}
+                    {servicesData[groupIndex * 2 + 1] ? (
+                      <div className="h-[290px] rounded-3xl border border-white/60 bg-white/50 shadow-xl backdrop-blur supports-[backdrop-filter]:bg-white/45 p-4">
+                        <div className="flex flex-col items-center text-center gap-3 h-full">
+                          {/* Foto/Logo */}
+                          <div className="w-[80px] h-[80px] flex items-center justify-center">
+                            <img src={servicesData[groupIndex * 2 + 1].image} alt={servicesData[groupIndex * 2 + 1].title} className="w-full h-full object-contain" />
+                          </div>
+                          {/* Título */}
+                          <h3 className="text-lg font-extrabold text-black">{servicesData[groupIndex * 2 + 1].title}</h3>
+                          {/* Texto */}
+                          <p className="text-sm leading-relaxed opacity-80 text-black flex-1">
+                            {servicesData[groupIndex * 2 + 1].description}
+                          </p>
+                        </div>
+                      </div>
+                    ) : (
+                      <div className="h-[290px]"></div>
+                    )}
                   </div>
                 </div>
               ))}
@@ -109,13 +144,13 @@ export function ServicesSection({ isVisible }: ServicesSectionProps) {
 
           {/* Indicador de posición para móvil */}
           <div className="mt-6 flex items-center justify-center gap-2">
-            {servicesData.map((_, i) => (
+            {Array.from({ length: Math.ceil(servicesData.length / 2) }, (_, groupIndex) => (
               <button
-                key={i}
+                key={groupIndex}
                 type="button"
-                aria-label={`Ir al servicio ${i + 1}`}
-                onClick={() => setIndex(i)}
-                className={`w-2 h-2 rounded-full transition-colors duration-200 ${i === index ? 'bg-white/80' : 'bg-white/30 hover:bg-white/50'}`}
+                aria-label={`Ir al grupo ${groupIndex + 1}`}
+                onClick={() => setIndex(groupIndex * 2)}
+                className={`w-2 h-2 rounded-full transition-colors duration-200 ${Math.floor(index / 2) === groupIndex ? 'bg-white/80' : 'bg-white/30 hover:bg-white/50'}`}
               />
             ))}
           </div>
